@@ -101,4 +101,7 @@
 		</plugins>
 
 	</build>
+	<modules>
+		<module>ecom-catalogs</module>
+	</modules>
 </project>
