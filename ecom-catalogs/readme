@@ -1,0 +1,38 @@
+## Partie 1 : Test dans eclipse
+   
+   Lancer MYSQL 
+   
+   docker run -d --name some-mysql -v D:/01_Tutos/00_Tools/02_Docker/lecture_1/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root –e MYSQL_DATABASE=test –e MYSQL_USER=dbuser –e MYSQL_PASSWORD=dbp4ss -p 3306:3306 mysql 
+   
+   Lancer l'application
+   
+   Test : http://localhost:8080/categories
+          http://localhost:8080/categories/1
+          
+## Partie 2 : Test avec deux conteneur Docker
+
+	Lancer MYSQL
+	
+	Dans l'appication.properties / spring.datasource.url changer l'adresse ip de localhost en "mysql-ip" (allias)
+	
+	Construire l'image docker de l'application (fabric8)
+	
+	mvn clean package docker:build
+	
+	Lancer l'application comme suit:
+	
+	docker run -t --name mysql-springboot-docker --link some-mysql:mysql_ip -p 8080:8080 doum167/ecom-catalogs
+	
+    Test : http://localhost:8080/categories
+           http://localhost:8080/categories/1
+	
+## Partie 3 : Vérification/debugging
+
+	docker exec -it mysql-springboot-docker bash
+	cat /etc/hosts -> 172.17.0.2      mysql_ip 48ed57225592 some-mysql
+	ping 172.17.0.2
+	
+	Nous pouvons inspecter l'addresse ip d'un conteneur comme suit:
+	docker ps
+	docker inspect container-id -> "IPAddress": "172.17.0.2"
+	
