@@ -49,7 +49,8 @@
     docker-compose down
     
     
-    
+## Partie 5 : Connecting ecom-reviews avec mongodb 
+	voir: docker-compose 
     
     
 	

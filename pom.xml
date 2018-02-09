@@ -108,5 +108,6 @@
 	</build>
 	<modules>
 		<module>ecom-catalogs</module>
+		<module>ecom-reviews</module>
 	</modules>
 </project>

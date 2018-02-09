@@ -18,7 +18,7 @@ services:
   catalogservice:
     image: doum167/ecom-catalogs
     ports:
-      - "8080:8080"
+      - "8180:8080"
     depends_on:
       - mysqldb
       

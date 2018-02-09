@@ -7,3 +7,9 @@
 /ecom-catalogs/bin
 /ecom-catalogs/target
 /ecom-catalogs/.settings
+
+/ecom-reviews/.project
+/ecom-reviews/.classpath
+/ecom-reviews/bin
+/ecom-reviews/target
+/ecom-reviews/.settings
