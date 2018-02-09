@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  mysqldb:
+    image: mysql
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=test
+      - MYSQL_USER=dbuser
+      - MYSQL_PASSWORD=dbp4ss
+      - MYSQL_ROOT_HOST= %
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  catalogservice:
+    image: doum167/ecom-catalogs
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysqldb
+      
+volumes:
+  mysql_data: 
