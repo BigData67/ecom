@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+  mysqldb:
+    image: mysql
+    container_name: "mysqldb"
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=test
+      - MYSQL_USER=dbuser
+      - MYSQL_PASSWORD=dbp4ss
+      - MYSQL_ROOT_HOST= %
+    volumes:
+      - mysql_data:/var/lib/mysql
+      
+  mongodb:
+    image: mongo:latest
+    container_name: "mongodb"
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+    volumes:
+      - mongo_data:/data/db
+
+  reviewservice:
+    image: doum167/ecom-reviews
+    container_name: "ecom-reviews"
+    ports:
+      - "8280:8080"
+    depends_on:
+      - mongodb
+      
+  catalogservice:
+    image: doum167/ecom-catalogs
+    container_name: "ecom-catalogs"
+    ports:
+      - "8180:8080"
+    depends_on:
+      - mysqldb
+      
+volumes:
+  mongo_data: 
+  mysql_data: 
