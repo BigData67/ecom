@@ -3,5 +3,14 @@ spring:
     mongodb:
       host : mongodb
       port: 27017
-
+      
+  application:
+    name: reviews-service
     
+server:
+  port: 8080
+  
+eureka:
+  client:
+    service-url:
+       defaultZone : http://eureka-server:8761/eureka  

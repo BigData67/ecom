@@ -65,7 +65,10 @@
 	
 	
 	
+## Partie 7 : Mise en place du service discovery (Eureka)
 	
+	Création du project eureka-service
+	Integration dans docker-compose général
 	
 	
 	

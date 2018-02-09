@@ -13,3 +13,9 @@
 /ecom-reviews/bin
 /ecom-reviews/target
 /ecom-reviews/.settings
+
+/ecom-eureka/.project
+/ecom-eureka/.classpath
+/ecom-eureka/bin
+/ecom-eureka/target
+/ecom-eureka/.settings

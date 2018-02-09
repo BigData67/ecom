@@ -26,6 +26,12 @@ services:
       - MONGO_LOG_DIR=/dev/null
     volumes:
       - mongo_data:/data/db
+      
+  eureka-server:
+    image: doum167/ecom-eureka
+    container_name: "eureka-server"
+    ports:
+     - "8761:8761"
 
   reviewservice:
     image: doum167/ecom-reviews
@@ -34,6 +40,7 @@ services:
       - "8280:8080"
     depends_on:
       - mongodb
+      - eureka-server
       
   catalogservice:
     image: doum167/ecom-catalogs
@@ -42,6 +49,7 @@ services:
       - "8180:8080"
     depends_on:
       - mysqldb
+      - eureka-server
       
 volumes:
   mongo_data: 

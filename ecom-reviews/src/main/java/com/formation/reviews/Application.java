@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;
 
@@ -13,6 +14,7 @@ import com.formation.reviews.repositories.ReviewRepository;
 
 @SpringBootApplication
 @EnableMongoRepositories
+@EnableEurekaClient
 public class Application extends RepositoryRestMvcConfiguration implements CommandLineRunner {
 	
 	@Autowired
