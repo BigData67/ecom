@@ -19,3 +19,9 @@
 /ecom-eureka/bin
 /ecom-eureka/target
 /ecom-eureka/.settings
+
+/ecom-gateway/.project
+/ecom-gateway/.classpath
+/ecom-gateway/bin
+/ecom-gateway/target
+/ecom-gateway/.settings

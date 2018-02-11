@@ -109,6 +109,7 @@
 	<modules>
 		<module>ecom-catalogs</module>
 		<module>ecom-reviews</module>
-		<module>ecom-eureka</module>
+		<module>ecom-eureka</module>		
+		<module>ecom-gateway</module>
 	</modules>
 </project>

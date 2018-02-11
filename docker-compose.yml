@@ -3,7 +3,7 @@ version: '3'
 services:
   mysqldb:
     image: mysql
-    container_name: "mysqldb"
+    container_name: "ecom-catalogs-mysqldb"
     restart: always
     ports:
       - '3306:3306'
@@ -18,7 +18,7 @@ services:
       
   mongodb:
     image: mongo:latest
-    container_name: "mongodb"
+    container_name: "ecom-reviews-mongodb"
     ports:
       - 27017:27017
     environment:
@@ -29,9 +29,17 @@ services:
       
   eureka-server:
     image: doum167/ecom-eureka
-    container_name: "eureka-server"
+    container_name: "server-discovery"
     ports:
      - "8761:8761"
+     
+  gateway:
+    image: doum167/ecom-gateway
+    container_name: "server-gateway"
+    links:
+      - eureka-server
+    ports:
+      - "9000:8080"
 
   reviewservice:
     image: doum167/ecom-reviews

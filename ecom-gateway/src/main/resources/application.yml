@@ -1,0 +1,18 @@
+zuul:
+  prefix: /api
+  routes:
+    reviews: 
+      path: /reviews/**
+      serviceId: reviews-service
+    catalogs: 
+      path: /catalogs/**
+      serviceId: catalogs-service          
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka/
+    registerWithEureka: false
+      
+server:
+  port: 8080
