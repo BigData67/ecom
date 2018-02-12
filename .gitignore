@@ -25,3 +25,9 @@
 /ecom-gateway/bin
 /ecom-gateway/target
 /ecom-gateway/.settings
+
+/ecom-search/.project
+/ecom-search/.classpath
+/ecom-search/bin
+/ecom-search/target
+/ecom-search/.settings

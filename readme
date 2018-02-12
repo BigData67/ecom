@@ -71,6 +71,18 @@
 	Integration dans docker-compose général
 	
 	
+## Partie 8 : Mise en place de zuul
+
+	Test accés sans gateway : http://localhost:8180/categories
+	                          http://localhost:8280/reviews
+
+	Test accés avec zuul: http://localhost:8180/api/catalogs/categories
+
+## Partie 9 : 
+	
+	Test accés sans gateway : http://localhost:8380/product/get-by-name/Green Shirt 
+	
+
 	
 	
 	

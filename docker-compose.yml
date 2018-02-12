@@ -26,7 +26,7 @@ services:
       - MONGO_LOG_DIR=/dev/null
     volumes:
       - mongo_data:/data/db
-      
+            
   eureka-server:
     image: doum167/ecom-eureka
     container_name: "server-discovery"

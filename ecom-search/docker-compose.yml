@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  elasticdb:
+    image: elasticsearch:2.4.6
+    container_name: "search-server"
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+
+  searchservice:
+    image: doum167/ecom-search
+    container_name: "ecom-search"
+    ports:
+      - "8380:8080"
+    depends_on:
+      - elasticdb

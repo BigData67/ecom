@@ -111,5 +111,6 @@
 		<module>ecom-reviews</module>
 		<module>ecom-eureka</module>		
 		<module>ecom-gateway</module>
+		<module>ecom-search</module>
 	</modules>
 </project>

@@ -6,7 +6,7 @@ zuul:
       serviceId: reviews-service
     catalogs: 
       path: /catalogs/**
-      serviceId: catalogs-service          
+      serviceId: catalogs-service  
 
 eureka:
   client:
