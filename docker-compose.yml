@@ -16,6 +16,13 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
       
+  elasticdb:
+    image: elasticsearch:2.4.6
+    container_name: "search-server"
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+      
   mongodb:
     image: mongo:latest
     container_name: "ecom-reviews-mongodb"
@@ -59,6 +66,17 @@ services:
       - mysqldb
       - eureka-server
       
+  searchservice:
+    image: doum167/ecom-search
+    container_name: "ecom-search"
+    ports:
+      - "8380:8080"
+    entrypoint: ./wait-for-it.sh elasticdb:9300 -t 60 --
+    command: java -jar /app.jar
+    depends_on:
+      - elasticdb
+      - eureka-server
+         
 volumes:
   mongo_data: 
   mysql_data: 

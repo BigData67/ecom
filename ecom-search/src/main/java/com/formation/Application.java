@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 import com.formation.model.MonetaryAmount;
 import com.formation.model.Product;
@@ -14,6 +15,7 @@ import com.formation.service.ProductService;
 import java.util.List;
 
 @SpringBootApplication
+@EnableEurekaClient
 public class Application implements CommandLineRunner{
 
     private static final Logger logger = LoggerFactory.getLogger(Application.class);
