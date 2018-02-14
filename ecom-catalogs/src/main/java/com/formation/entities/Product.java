@@ -14,6 +14,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "products")
 public class Product {
@@ -37,6 +39,7 @@ public class Product {
 	@JoinTable(name = "products_categories", joinColumns = {
 			@JoinColumn(name = "product_id", referencedColumnName = "id") }, inverseJoinColumns = {
 					@JoinColumn(name = "category_id", referencedColumnName = "id") })
+	@JsonIgnore
 	private List<Category> categories;
 
 	public Long getId() {

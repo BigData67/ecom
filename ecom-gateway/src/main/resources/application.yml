@@ -5,7 +5,10 @@ zuul:
       path: /reviews/**
       serviceId: reviews-service
     catalogs: 
-      path: /catalogs/**
+      path: /cat/**
+      serviceId: catalogs-service
+    products: 
+      path: /prod/**
       serviceId: catalogs-service
     serach:
       path: /search/**
