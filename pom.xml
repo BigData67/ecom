@@ -12,12 +12,15 @@
 		<spring-cloud.version>Camden.SR7</spring-cloud.version>
 		<spring-boot.version>1.5.10.RELEASE</spring-boot.version>
 		<spring-data-releasetrain.version>Hopper-SR1</spring-data-releasetrain.version>
-		
+
 		<!--set this to your docker account name -->
 		<docker.image.prefix>doum167</docker.image.prefix>
 
 		<!--Set to name of project -->
 		<docker.image.name>ecom-catalogs</docker.image.name>
+
+		<!-- swagger 2 -->
+		<springfox.version>2.7.0</springfox.version>
 	</properties>
 
 	<dependencyManagement>
@@ -48,6 +51,16 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-test</artifactId>
 				<version>${spring-boot.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger2</artifactId>
+				<version>${springfox.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger-ui</artifactId>
+				<version>${springfox.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -109,7 +122,7 @@
 	<modules>
 		<module>ecom-catalogs</module>
 		<module>ecom-reviews</module>
-		<module>ecom-eureka</module>		
+		<module>ecom-eureka</module>
 		<module>ecom-gateway</module>
 		<module>ecom-search</module>
 	</modules>
